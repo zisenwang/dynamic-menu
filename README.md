@@ -11,4 +11,4 @@ npm run dev
 ```
 The APP will be deployed on port 8888 by default.
 
-Available on [152.32.215.138/index](152.32.215.138/index)
+Available on <http://152.32.215.138/index>
