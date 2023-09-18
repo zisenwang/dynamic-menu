@@ -11,7 +11,11 @@
         <div class="m-2" *ngFor="let menu of (menus | async)">
           <button mat-menu-item class="btn custom-button" [matMenuTriggerFor]="subMenu">{{menu.main}}</button>
           <mat-menu #subMenu="matMenu">
-            <button mat-menu-item *ngFor="let sub of menu.subs" [value]="sub" [(ngModel)]="selectedPage">{{sub}}</button>
+            <button
+              mat-menu-item
+              *ngFor="let sub of menu.subs"
+              (click)="selectPage($event)"
+            >{{sub}}</button>
           </mat-menu>
         </div>
       </div>
@@ -28,5 +32,8 @@
         </mat-select>
       </mat-form-field>
     </div>
+  </div>
+  <div class="m-5">
+    <h1>{{selectedPage}}</h1>
   </div>
 </div>

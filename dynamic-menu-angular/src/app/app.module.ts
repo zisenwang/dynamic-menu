@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatListModule} from "@angular/material/list";
 import {MatMenuModule} from "@angular/material/menu";
 import { EffectsModule } from '@ngrx/effects';
 import { QueryEffects } from './store/effects/query.effects';

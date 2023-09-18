@@ -1,6 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
-import {update_menu} from "../actions/menu.actions";
+import {select_page, update_menu} from "../actions/menu.actions";
 import * as table from "src/assets/table.json"
+import {act} from "@ngrx/effects";
 
 export const menuFeatureKey = 'menu';
 
@@ -28,12 +29,14 @@ export interface RoleInfo {
 
 export interface State {
   menus: Menu[],
-  data: Object
+  data: Object,
+  selectedPage: string
 }
 
 export const initialState: State = {
   menus: [],
   data: {},
+  selectedPage: ""
 };
 
 export const reducer = createReducer(
@@ -42,6 +45,10 @@ export const reducer = createReducer(
     ...state,
     menus:resolvePermission(action.data),
     data: action.data
+  })),
+  on(select_page, (state,action) => ({
+    ...state,
+    selectedPage: action.selectedPage
   }))
 );
 
