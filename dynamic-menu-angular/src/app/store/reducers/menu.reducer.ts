@@ -4,8 +4,6 @@ import * as table from "src/assets/table.json"
 
 export const menuFeatureKey = 'menu';
 
-
-
 interface Table {
   [key: string]:{
     [key: string]: {
@@ -14,7 +12,6 @@ interface Table {
     }
   }
 }
-const rules:Table = table;
 
 export interface Menu {
   main: string,
@@ -48,6 +45,12 @@ export const reducer = createReducer(
   }))
 );
 
+const rules:Table = table;  // rule table
+
+/**
+ * handle permission selection
+ * @param data
+ */
 const resolvePermission = (data:RoleInfo) => {
   let temp = deriveMenu(data)
   for (let i = temp.length-1 ; i >= 0 ; i--){

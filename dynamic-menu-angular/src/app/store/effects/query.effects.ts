@@ -3,7 +3,6 @@ import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {query_role_id, update_menu} from "../actions/menu.actions";
 import {HttpClient} from "@angular/common/http";
 import {switchMap, map, filter} from "rxjs";
-import {RoleInfo} from "../reducers/menu.reducer";
 
 
 @Injectable()

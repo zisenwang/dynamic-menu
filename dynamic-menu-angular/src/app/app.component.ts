@@ -9,12 +9,16 @@ import {Store} from "@ngrx/store";
 })
 export class AppComponent {
   title = 'dynamic-menu-angular';
+  roleId: string = "";
+  roles: string[] = ["1","2","3","4","5"];
 
   constructor(private store: Store) {
   }
 
   query(){
-    this.store.dispatch(query_role_id({id:"1"}))
+    if (this.roleId !== "") {
+      this.store.dispatch(query_role_id({id:this.roleId}))
+    }
   }
 }
 

@@ -10,18 +10,24 @@ import {MatMenuModule} from "@angular/material/menu";
 import { EffectsModule } from '@ngrx/effects';
 import { QueryEffects } from './store/effects/query.effects';
 import {HttpClientModule} from "@angular/common/http";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent
   ],
-    imports: [
-        BrowserModule,
-        StoreModule.forRoot(reducers, {metaReducers}),
-        BrowserAnimationsModule,
-        EffectsModule.forRoot([QueryEffects]),
-        HttpClientModule,
-    ],
+  imports: [
+    BrowserModule,
+    StoreModule.forRoot(reducers, {metaReducers}),
+    BrowserAnimationsModule,
+    EffectsModule.forRoot([QueryEffects]),
+    HttpClientModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

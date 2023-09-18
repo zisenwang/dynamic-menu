@@ -6,10 +6,17 @@
         &nbsp;Dynamic Menu Builder &nbsp;&nbsp;&nbsp;&nbsp;
       </h1>
     </div>
-    <div>
+    <div id="menus" *ngFor="">
     </div>
-    <div>
-      <button (click)="query()">查询</button>
+    <div id="select-bar">
+      <mat-form-field>
+        <mat-label>Role ID</mat-label>
+        <mat-select [(ngModel)]="roleId" (selectionChange)="query()" >
+          <mat-option *ngFor="let role of roles" [value]="role">
+            {{role}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
   </div>
 </div>
