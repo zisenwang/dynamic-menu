@@ -26,7 +26,8 @@ import {FormsModule} from "@angular/forms";
     HttpClientModule,
     MatFormFieldModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

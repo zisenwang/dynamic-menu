@@ -1,13 +1,23 @@
 <div class="container">
   <div class="header">
     <div>
-      <img src="assets/hammer-and-pick.svg" alt="Hammer Logo"/>
-      <h1>
-        &nbsp;Dynamic Menu Builder &nbsp;&nbsp;&nbsp;&nbsp;
-      </h1>
+      <div>
+        <img src="assets/hammer-and-pick.svg" alt="Hammer Logo"/>
+        <h1 class="text-nowrap">
+          &nbsp;Dynamic Menu Builder &nbsp;&nbsp;&nbsp;&nbsp;
+        </h1>
+      </div>
+      <div id="menus">
+        <div class="m-2" *ngFor="let menu of (menus | async)">
+          <button mat-menu-item class="btn custom-button" [matMenuTriggerFor]="subMenu">{{menu.main}}</button>
+          <mat-menu #subMenu="matMenu">
+            <button mat-menu-item *ngFor="let sub of menu.subs" [value]="sub" [(ngModel)]="selectedPage">{{sub}}</button>
+          </mat-menu>
+        </div>
+      </div>
     </div>
-    <div id="menus" *ngFor="">
-    </div>
+
+
     <div id="select-bar">
       <mat-form-field>
         <mat-label>Role ID</mat-label>

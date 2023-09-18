@@ -26,3 +26,8 @@ img {
   font-family: "Comic Sans MS";
   font-size: 30px;
 }
+
+.custom-button {
+  border-bottom: 2px solid gray;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
