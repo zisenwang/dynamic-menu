@@ -20,7 +20,7 @@ import {HttpClientModule} from "@angular/common/http";
         StoreModule.forRoot(reducers, {metaReducers}),
         BrowserAnimationsModule,
         EffectsModule.forRoot([QueryEffects]),
-        HttpClientModule
+        HttpClientModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

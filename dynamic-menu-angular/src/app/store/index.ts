@@ -19,5 +19,13 @@ export const reducers: ActionReducerMap<AppState> = {
   [fromMenu.menuFeatureKey]: fromMenu.reducer,
 };
 
-
-export const metaReducers: MetaReducer<AppState>[] = isDevMode() ? [] : [];
+function logger(reducer: ActionReducer<AppState>):ActionReducer<AppState> {
+   return function (state,action) {
+     const res = reducer(state, action)
+     console.log("latest state", res)
+     console.log("state", state)
+     console.log("action", action)
+     return res;
+   }
+}
+export const metaReducers: MetaReducer<AppState>[] = isDevMode() ? [logger] : [];
